@@ -18,7 +18,6 @@ def hello_world_func():
 def drop_table_func():
     return """
     drop table if exists CHECK_ASTRO;
-    --
     """
 
 @aql.run_raw_sql(conn_id="conn_snf", task_id="hello_sql", results_format="pandas_dataframe")
