@@ -17,7 +17,7 @@ def hello_world_func():
 @aql.run_raw_sql(conn_id="conn_snf", task_id="drop_table", results_format="pandas_dataframe")
 def drop_table_func():
     return """
-    drop table if exists FLIGHT.PRICES.CHECK_ASTRO;
+    drop table if exists CHECK_ASTRO;
     """
 
 @aql.run_raw_sql(conn_id="conn_snf", task_id="hello_sql", results_format="pandas_dataframe")
