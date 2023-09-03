@@ -33,7 +33,7 @@ default_args={
     default_args=default_args,
     schedule="*/5 * * * *",
     start_date=pendulum.from_format("2023-09-03", "YYYY-MM-DD").in_tz("Asia/Kolkata"),
-    catchup=True,
+    catchup=False,
     owner_links={
         "yashdeepsant@eaton.com": "mailto:yashdeepsant@eaton.com",
         "Open in Cloud IDE": "https://cloud.astronomer.io/cllyrswtd00k001mvcn1z9xau/cloud-ide/clm2ysuyu001w01mao4iroaxp/clm2yytnm001x01maknm4an50",
