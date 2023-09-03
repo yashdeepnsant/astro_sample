@@ -17,7 +17,7 @@ def hello_world_func():
 @aql.run_raw_sql(conn_id="conn_snf", task_id="hello_sql", results_format="pandas_dataframe")
 def hello_sql_func():
     return """
-    select * from prices_data limit 10;
+    select * from prices_data limit 5;
     """
 
 @aql.dataframe(task_id="data_dependency")
