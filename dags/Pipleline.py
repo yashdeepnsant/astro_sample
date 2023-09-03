@@ -14,6 +14,12 @@ import pendulum
 def hello_world_func():
     return "Hello World"
 
+@aql.run_raw_sql(conn_id="conn_snf", task_id="drop_table", results_format="pandas_dataframe")
+def drop_table_func():
+    return """
+    drop table if exists FLIGHT.PRICES.CHECK_ASTRO;
+    """
+
 @aql.run_raw_sql(conn_id="conn_snf", task_id="hello_sql", results_format="pandas_dataframe")
 def hello_sql_func():
     return """
@@ -47,6 +53,10 @@ def Pipleline():
     data_dependency = data_dependency_func(
         hello_world,
     )
+
+    drop_table = drop_table_func()
+
+    drop_table << hello_world
 
     hello_sql << hello_world
 
