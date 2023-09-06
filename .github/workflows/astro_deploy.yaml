@@ -47,7 +47,7 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v3
-        
+        with: deployment-id: 'clm7rg82i137828099yga5cqaaz8'
       # If only DAGs changed do a DAG Deploy
       - name: DAG Deploy to Astro
         if: needs.deployment-type.outputs.DAGS_ONLY == 1
